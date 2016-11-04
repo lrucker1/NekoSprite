@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		942A9E341DCD344400EF5D86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A9E331DCD344400EF5D86 /* AppDelegate.m */; };
+		942A9E371DCD344400EF5D86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A9E361DCD344400EF5D86 /* main.m */; };
+		942A9E391DCD344400EF5D86 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 942A9E381DCD344400EF5D86 /* GameScene.sks */; };
+		942A9E3B1DCD344400EF5D86 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 942A9E3A1DCD344400EF5D86 /* Actions.sks */; };
+		942A9E3E1DCD344400EF5D86 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A9E3D1DCD344400EF5D86 /* GameScene.m */; };
+		942A9E411DCD344400EF5D86 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A9E401DCD344400EF5D86 /* ViewController.m */; };
+		942A9E431DCD344400EF5D86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 942A9E421DCD344400EF5D86 /* Assets.xcassets */; };
+		942A9E461DCD344500EF5D86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 942A9E441DCD344500EF5D86 /* Main.storyboard */; };
+		942A9E511DCD344500EF5D86 /* NekoSpriteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A9E501DCD344500EF5D86 /* NekoSpriteTests.m */; };
+		942A9E5C1DCD344500EF5D86 /* NekoSpriteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A9E5B1DCD344500EF5D86 /* NekoSpriteUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		942A9E4D1DCD344500EF5D86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 942A9E271DCD344400EF5D86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 942A9E2E1DCD344400EF5D86;
+			remoteInfo = NekoSprite;
+		};
+		942A9E581DCD344500EF5D86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 942A9E271DCD344400EF5D86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 942A9E2E1DCD344400EF5D86;
+			remoteInfo = NekoSprite;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		942A9E2F1DCD344400EF5D86 /* NekoSprite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NekoSprite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		942A9E321DCD344400EF5D86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		942A9E331DCD344400EF5D86 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		942A9E361DCD344400EF5D86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		942A9E381DCD344400EF5D86 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		942A9E3A1DCD344400EF5D86 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		942A9E3C1DCD344400EF5D86 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		942A9E3D1DCD344400EF5D86 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		942A9E3F1DCD344400EF5D86 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		942A9E401DCD344400EF5D86 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		942A9E421DCD344400EF5D86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		942A9E451DCD344500EF5D86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		942A9E471DCD344500EF5D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		942A9E4C1DCD344500EF5D86 /* NekoSpriteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NekoSpriteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		942A9E501DCD344500EF5D86 /* NekoSpriteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NekoSpriteTests.m; sourceTree = "<group>"; };
+		942A9E521DCD344500EF5D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		942A9E571DCD344500EF5D86 /* NekoSpriteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NekoSpriteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		942A9E5B1DCD344500EF5D86 /* NekoSpriteUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NekoSpriteUITests.m; sourceTree = "<group>"; };
+		942A9E5D1DCD344500EF5D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		942A9E2C1DCD344400EF5D86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		942A9E491DCD344500EF5D86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		942A9E541DCD344500EF5D86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		942A9E261DCD344400EF5D86 = {
+			isa = PBXGroup;
+			children = (
+				942A9E311DCD344400EF5D86 /* NekoSprite */,
+				942A9E4F1DCD344500EF5D86 /* NekoSpriteTests */,
+				942A9E5A1DCD344500EF5D86 /* NekoSpriteUITests */,
+				942A9E301DCD344400EF5D86 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		942A9E301DCD344400EF5D86 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				942A9E2F1DCD344400EF5D86 /* NekoSprite.app */,
+				942A9E4C1DCD344500EF5D86 /* NekoSpriteTests.xctest */,
+				942A9E571DCD344500EF5D86 /* NekoSpriteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		942A9E311DCD344400EF5D86 /* NekoSprite */ = {
+			isa = PBXGroup;
+			children = (
+				942A9E321DCD344400EF5D86 /* AppDelegate.h */,
+				942A9E331DCD344400EF5D86 /* AppDelegate.m */,
+				942A9E381DCD344400EF5D86 /* GameScene.sks */,
+				942A9E3A1DCD344400EF5D86 /* Actions.sks */,
+				942A9E3C1DCD344400EF5D86 /* GameScene.h */,
+				942A9E3D1DCD344400EF5D86 /* GameScene.m */,
+				942A9E3F1DCD344400EF5D86 /* ViewController.h */,
+				942A9E401DCD344400EF5D86 /* ViewController.m */,
+				942A9E421DCD344400EF5D86 /* Assets.xcassets */,
+				942A9E441DCD344500EF5D86 /* Main.storyboard */,
+				942A9E471DCD344500EF5D86 /* Info.plist */,
+				942A9E351DCD344400EF5D86 /* Supporting Files */,
+			);
+			path = NekoSprite;
+			sourceTree = "<group>";
+		};
+		942A9E351DCD344400EF5D86 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				942A9E361DCD344400EF5D86 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		942A9E4F1DCD344500EF5D86 /* NekoSpriteTests */ = {
+			isa = PBXGroup;
+			children = (
+				942A9E501DCD344500EF5D86 /* NekoSpriteTests.m */,
+				942A9E521DCD344500EF5D86 /* Info.plist */,
+			);
+			path = NekoSpriteTests;
+			sourceTree = "<group>";
+		};
+		942A9E5A1DCD344500EF5D86 /* NekoSpriteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				942A9E5B1DCD344500EF5D86 /* NekoSpriteUITests.m */,
+				942A9E5D1DCD344500EF5D86 /* Info.plist */,
+			);
+			path = NekoSpriteUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		942A9E2E1DCD344400EF5D86 /* NekoSprite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 942A9E601DCD344500EF5D86 /* Build configuration list for PBXNativeTarget "NekoSprite" */;
+			buildPhases = (
+				942A9E2B1DCD344400EF5D86 /* Sources */,
+				942A9E2C1DCD344400EF5D86 /* Frameworks */,
+				942A9E2D1DCD344400EF5D86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NekoSprite;
+			productName = NekoSprite;
+			productReference = 942A9E2F1DCD344400EF5D86 /* NekoSprite.app */;
+			productType = "com.apple.product-type.application";
+		};
+		942A9E4B1DCD344500EF5D86 /* NekoSpriteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 942A9E631DCD344500EF5D86 /* Build configuration list for PBXNativeTarget "NekoSpriteTests" */;
+			buildPhases = (
+				942A9E481DCD344500EF5D86 /* Sources */,
+				942A9E491DCD344500EF5D86 /* Frameworks */,
+				942A9E4A1DCD344500EF5D86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				942A9E4E1DCD344500EF5D86 /* PBXTargetDependency */,
+			);
+			name = NekoSpriteTests;
+			productName = NekoSpriteTests;
+			productReference = 942A9E4C1DCD344500EF5D86 /* NekoSpriteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		942A9E561DCD344500EF5D86 /* NekoSpriteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 942A9E661DCD344500EF5D86 /* Build configuration list for PBXNativeTarget "NekoSpriteUITests" */;
+			buildPhases = (
+				942A9E531DCD344500EF5D86 /* Sources */,
+				942A9E541DCD344500EF5D86 /* Frameworks */,
+				942A9E551DCD344500EF5D86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				942A9E591DCD344500EF5D86 /* PBXTargetDependency */,
+			);
+			name = NekoSpriteUITests;
+			productName = NekoSpriteUITests;
+			productReference = 942A9E571DCD344500EF5D86 /* NekoSpriteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		942A9E271DCD344400EF5D86 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Lee Ann Rucker";
+				TargetAttributes = {
+					942A9E2E1DCD344400EF5D86 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					942A9E4B1DCD344500EF5D86 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 942A9E2E1DCD344400EF5D86;
+					};
+					942A9E561DCD344500EF5D86 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 942A9E2E1DCD344400EF5D86;
+					};
+				};
+			};
+			buildConfigurationList = 942A9E2A1DCD344400EF5D86 /* Build configuration list for PBXProject "NekoSprite" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 942A9E261DCD344400EF5D86;
+			productRefGroup = 942A9E301DCD344400EF5D86 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				942A9E2E1DCD344400EF5D86 /* NekoSprite */,
+				942A9E4B1DCD344500EF5D86 /* NekoSpriteTests */,
+				942A9E561DCD344500EF5D86 /* NekoSpriteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		942A9E2D1DCD344400EF5D86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				942A9E391DCD344400EF5D86 /* GameScene.sks in Resources */,
+				942A9E431DCD344400EF5D86 /* Assets.xcassets in Resources */,
+				942A9E3B1DCD344400EF5D86 /* Actions.sks in Resources */,
+				942A9E461DCD344500EF5D86 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		942A9E4A1DCD344500EF5D86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		942A9E551DCD344500EF5D86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		942A9E2B1DCD344400EF5D86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				942A9E371DCD344400EF5D86 /* main.m in Sources */,
+				942A9E3E1DCD344400EF5D86 /* GameScene.m in Sources */,
+				942A9E411DCD344400EF5D86 /* ViewController.m in Sources */,
+				942A9E341DCD344400EF5D86 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		942A9E481DCD344500EF5D86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				942A9E511DCD344500EF5D86 /* NekoSpriteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		942A9E531DCD344500EF5D86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				942A9E5C1DCD344500EF5D86 /* NekoSpriteUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		942A9E4E1DCD344500EF5D86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 942A9E2E1DCD344400EF5D86 /* NekoSprite */;
+			targetProxy = 942A9E4D1DCD344500EF5D86 /* PBXContainerItemProxy */;
+		};
+		942A9E591DCD344500EF5D86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 942A9E2E1DCD344400EF5D86 /* NekoSprite */;
+			targetProxy = 942A9E581DCD344500EF5D86 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		942A9E441DCD344500EF5D86 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				942A9E451DCD344500EF5D86 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		942A9E5E1DCD344500EF5D86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		942A9E5F1DCD344500EF5D86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		942A9E611DCD344500EF5D86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NekoSprite/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lrucker.NekoSprite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		942A9E621DCD344500EF5D86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NekoSprite/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lrucker.NekoSprite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		942A9E641DCD344500EF5D86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NekoSpriteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lrucker.NekoSpriteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NekoSprite.app/Contents/MacOS/NekoSprite";
+			};
+			name = Debug;
+		};
+		942A9E651DCD344500EF5D86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NekoSpriteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lrucker.NekoSpriteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NekoSprite.app/Contents/MacOS/NekoSprite";
+			};
+			name = Release;
+		};
+		942A9E671DCD344500EF5D86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NekoSpriteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lrucker.NekoSpriteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = NekoSprite;
+			};
+			name = Debug;
+		};
+		942A9E681DCD344500EF5D86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NekoSpriteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lrucker.NekoSpriteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = NekoSprite;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		942A9E2A1DCD344400EF5D86 /* Build configuration list for PBXProject "NekoSprite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				942A9E5E1DCD344500EF5D86 /* Debug */,
+				942A9E5F1DCD344500EF5D86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		942A9E601DCD344500EF5D86 /* Build configuration list for PBXNativeTarget "NekoSprite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				942A9E611DCD344500EF5D86 /* Debug */,
+				942A9E621DCD344500EF5D86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		942A9E631DCD344500EF5D86 /* Build configuration list for PBXNativeTarget "NekoSpriteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				942A9E641DCD344500EF5D86 /* Debug */,
+				942A9E651DCD344500EF5D86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		942A9E661DCD344500EF5D86 /* Build configuration list for PBXNativeTarget "NekoSpriteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				942A9E671DCD344500EF5D86 /* Debug */,
+				942A9E681DCD344500EF5D86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 942A9E271DCD344400EF5D86 /* Project object */;
+}
