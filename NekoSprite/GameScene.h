@@ -11,3 +11,7 @@
 @interface GameScene : SKScene
 
 @end
+
+@interface GameView : SKView
+
+@end

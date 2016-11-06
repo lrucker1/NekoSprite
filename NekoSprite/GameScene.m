@@ -13,19 +13,26 @@ NSTimeInterval kAnimateInterval = 0.125f;
 @interface NekoAction : NSObject
 
 @property (strong) NSArray *frames;
-@property (strong) SKSpriteNode *sprite;
+
+@end
+
+@interface GameView ()
+@property id trackingTouchIdentity;
 
 @end
 
 @interface GameScene ()
 
-@property NSPoint spriteOrigin;
-@property SKSpriteNode *currentSprite;
 @property (strong) SKSpriteNode *sprite;
 
 @property (strong) NekoAction *stop, *jare, *kaki, *akubi, *sleep, *awake, *u_move, *d_move,
 	        *l_move, *r_move, *ul_move, *ur_move, *dl_move, *dr_move, *u_togi,
 			*d_togi, *l_togi, *r_togi;
+
+- (void)touchMovedToPoint:(CGPoint)location;
+- (void)touchDownAtPoint:(CGPoint)location;
+- (void)pinToBounds;
+
 @end
 
 @implementation NekoAction
@@ -35,7 +42,6 @@ NSTimeInterval kAnimateInterval = 0.125f;
     self = [super init];
     if (!self) return nil;
     _frames = [self texturesFromFrames:names];
-    self.sprite = [SKSpriteNode spriteNodeWithTexture:_frames[0]];
     return self;
 }
 
@@ -52,24 +58,96 @@ NSTimeInterval kAnimateInterval = 0.125f;
 
 - (SKAction *)animationAction
 {
-    return [SKAction animateWithTextures:self.frames
+     return [SKAction animateWithTextures:self.frames
                             timePerFrame:kAnimateInterval
                                   resize:NO
                                  restore:YES];
 }
 
-- (void)doAction
+@end
+
+@implementation GameView
+
+- (BOOL)acceptsFirstResponder
 {
-    if ([self.frames count] == 1) {
-        return;
+    return YES;
+}
+- (BOOL)acceptsTouchEvents
+{
+    return YES;
+}
+
+- (NSPoint)locationForTouch:(NSTouch *)touch
+{
+    NSPoint loc = [touch locationInView:self];
+    return [self convertPoint:loc toScene:self.scene];
+}
+
+- (void)viewDidEndLiveResize
+{
+    [(GameScene *)self.scene pinToBounds];
+}
+
+- (void)touchesBeganWithEvent:(NSEvent *)event
+{
+    // Follow any new touch.
+
+    NSSet<NSTouch *> *touches = [event touchesMatchingPhase:NSTouchPhaseBegan inView:self];
+    // Note: Touches may contain 0, 1 or more touches.
+    // What to do if there are more than one touch?
+    // In this example, randomly pick a touch to track and ignore the other one.
+    
+    NSTouch *touch = touches.anyObject;
+    if (touch != nil)
+    {
+        if (touch.type == NSTouchTypeDirect)
+        {
+            _trackingTouchIdentity = touch.identity;
+            [(GameScene *)self.scene touchDownAtPoint:[self locationForTouch:touch]];
+        }
     }
-    //This is our general runAction method to make our neko animate.
-    [self.sprite runAction:[SKAction repeatActionForever:
-            [self animationAction]]];
-    return;
+    
+    [super touchesBeganWithEvent:event];
+}
+
+- (void)touchesMovedWithEvent:(NSEvent *)event
+{
+    if (self.trackingTouchIdentity)
+    {
+        for (NSTouch *touch in [event touchesMatchingPhase:NSTouchPhaseMoved inView:self])
+        {
+            if (touch.type == NSTouchTypeDirect && [_trackingTouchIdentity isEqual:touch.identity])
+            {
+                [(GameScene *)self.scene touchMovedToPoint:[self locationForTouch:touch]];
+            }
+        }
+    }
+    
+    [super touchesMovedWithEvent:event];
+}
+
+- (void)touchesEndedWithEvent:(NSEvent *)event
+{
+    if (self.trackingTouchIdentity)
+    {
+        for (NSTouch *touch in [event touchesMatchingPhase:NSTouchPhaseEnded inView:self])
+        {
+            if (touch.type == NSTouchTypeDirect && [_trackingTouchIdentity isEqual:touch.identity])
+            {
+                // Finshed tracking successfully.
+                _trackingTouchIdentity = nil;
+                
+                [(GameScene *)self.scene touchMovedToPoint:[self locationForTouch:touch]];
+                break;
+            }
+        }
+    }
+
+    [super touchesEndedWithEvent:event];
 }
 
 @end
+
 
 @implementation GameScene {
     SKShapeNode *_spinnyNode;
@@ -107,41 +185,16 @@ NSTimeInterval kAnimateInterval = 0.125f;
 
 - (void)didMoveToView:(SKView *)view {
     // Setup your scene here
-    
-    // Get label node from scene and store it for use later
-//    _label = (SKLabelNode *)[self childNodeWithName:@"//helloLabel"];
-//    
-//    _label.alpha = 0.0;
-//    [_label runAction:[SKAction fadeInWithDuration:2.0]];
-    
-//    CGFloat w = (self.size.width + self.size.height) * 0.05;
-    
-//    // Create shape node to use during mouse interaction
-//    _spinnyNode = [SKShapeNode shapeNodeWithRectOfSize:CGSizeMake(w, w) cornerRadius:w * 0.3];
-//    _spinnyNode.lineWidth = 2.5;
+    if (self.sprite) return;
     [self configureNeko];
-    self.spriteOrigin = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+    self.sprite.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+    [self addChild:self.sprite];
     [self nekoIdle];
-
-//    [_spinnyNode runAction:[SKAction repeatActionForever:[SKAction rotateByAngle:M_PI duration:1]]];
-//    [_spinnyNode runAction:[SKAction sequence:@[
-//                                                [SKAction waitForDuration:0.5],
-//                                                [SKAction fadeOutWithDuration:0.5],
-//                                                [SKAction removeFromParent],
-//                                                ]]];
-
 }
 
 - (void)showNeko:(NekoAction *)neko
 {
-    if (self.currentSprite) {
-        self.spriteOrigin = self.currentSprite.position;
-        [self.currentSprite removeFromParent];
-    }
-    self.currentSprite = neko.sprite;
-    neko.sprite.position = self.spriteOrigin;
-    [self addChild:neko.sprite];
-    [neko doAction];
+    [self.sprite runAction:[SKAction repeatActionForever:[neko animationAction]]];
 }
 
 - (NekoAction *)nekoForDirection:(CGPoint)moveDifference
@@ -196,40 +249,68 @@ NSTimeInterval kAnimateInterval = 0.125f;
 {
     [self showNeko:self.stop];
     SKAction *idleAction =
-        [SKAction sequence:@[[SKAction waitForDuration:3],
+        [SKAction sequence:@[[SKAction waitForDuration:2.5],
                              [SKAction repeatAction:[self.jare animationAction] count:10],
                              [SKAction repeatAction:[self.kaki animationAction] count:6],
                              [SKAction repeatAction:[self.akubi animationAction] count:4],
                              [SKAction repeatActionForever:[self.sleep animationAction]]]];
-    [self.currentSprite runAction:idleAction withKey:@"nekoIdle"];
+    [self.sprite runAction:idleAction withKey:@"nekoIdle"];
+}
+
+
+- (void)pinToBounds
+{
+    NSPoint p = self.sprite.position;
+    NSRect bounds = self.frame;
+    if (NSPointInRect(p, bounds)) {
+        return;
+    }
+    if (p.x < NSMinX(bounds)) {
+        p.x = NSMinX(bounds) + 16;
+    }
+    if (p.y < NSMinY(bounds)) {
+        p.y = NSMinY(bounds) + 16;
+    }
+    if (p.x > NSMaxX(bounds)) {
+        p.x = NSMaxX(bounds) - 16;
+    }
+    if (p.y > NSMaxY(bounds)) {
+        p.y = NSMaxY(bounds) - 16;
+    }
+    [self touchMovedToPoint:p];
+}
+
+- (void)stopActions
+{
+    if ([self.sprite actionForKey:@"nekoMoving"]) {
+        //stop moving and look surprised
+        [self.sprite removeActionForKey:@"nekoMoving"];
+    }
+    if ([self.sprite actionForKey:@"nekoIdle"]) {
+        //stop moving and look surprised
+        [self.sprite removeActionForKey:@"nekoIdle"];
+    }
 }
 
 - (void)touchDownAtPoint:(CGPoint)location
 {
-    if ([self.currentSprite actionForKey:@"nekoMoving"]) {
-        //stop moving and look surprised
-        [self.currentSprite removeActionForKey:@"nekoMoving"];
-    }
-    if ([self.currentSprite actionForKey:@"nekoIdle"]) {
-        //stop moving and look surprised
-        [self.currentSprite removeActionForKey:@"nekoIdle"];
-    }
+    [self stopActions];
     [self showNeko:self.awake];
 }
 
 - (void)touchMovedToPoint:(CGPoint)location
 {
-}
-
-- (void)touchUpAtPoint:(CGPoint)location
-{
+    [self stopActions];
 
     NekoAction *action = nil;
     CGSize screenSize = self.frame.size;
-    float bearVelocity = screenSize.width / 5.0;
-    CGPoint moveDifference = CGPointMake(location.x - self.currentSprite.position.x, location.y - self.currentSprite.position.y);
+    // TouchBar is small; just move left/right.
+    if (screenSize.height < 32) location.y = 0;
+
+    float velocity = 100;//screenSize.width / 5.0;
+    CGPoint moveDifference = CGPointMake(location.x - self.sprite.position.x, location.y - self.sprite.position.y);
     float distanceToMove = sqrtf(moveDifference.x * moveDifference.x + moveDifference.y * moveDifference.y);
-    float moveDuration = distanceToMove / bearVelocity;
+    float moveDuration = distanceToMove / velocity;
     action = [self nekoForDirection:moveDifference];
     [self showNeko:action];
     SKAction *moveAction = [SKAction moveTo:location duration:moveDuration];
@@ -237,7 +318,12 @@ NSTimeInterval kAnimateInterval = 0.125f;
         [self nekoIdle];
     }];
     SKAction *moveActionWithDone = [SKAction sequence:@[moveAction,doneAction]];
-    [self.currentSprite runAction:moveActionWithDone withKey:@"nekoMoving"];
+    [self.sprite runAction:moveActionWithDone withKey:@"nekoMoving"];
+}
+
+- (void)touchUpAtPoint:(CGPoint)location
+{
+    [self touchMovedToPoint:location];
 }
 
 - (void)mouseDown:(NSEvent *)theEvent {

@@ -10,9 +10,10 @@
 #import <SpriteKit/SpriteKit.h>
 #import <GameplayKit/GameplayKit.h>
 
-@interface ViewController : NSViewController
+@interface ViewController : NSViewController <NSTouchBarDelegate>
 
 @property (assign) IBOutlet SKView *skView;
+@property (strong) NSCustomTouchBarItem *customViewItem;
 
 @end
 
