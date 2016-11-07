@@ -307,7 +307,7 @@ NSTimeInterval kAnimateInterval = 0.125f;
     // TouchBar is small; just move left/right.
     if (screenSize.height < 32) location.y = 0;
 
-    float velocity = 100;//screenSize.width / 5.0;
+    float velocity = 100;
     CGPoint moveDifference = CGPointMake(location.x - self.sprite.position.x, location.y - self.sprite.position.y);
     float distanceToMove = sqrtf(moveDifference.x * moveDifference.x + moveDifference.y * moveDifference.y);
     float moveDuration = distanceToMove / velocity;
